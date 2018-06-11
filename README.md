@@ -1,7 +1,7 @@
 SSTrolley
 ==========
-[![Build status][shield-build]](#)  
-[![Dependencies][shield-dependencies]](#)  
+![Build status][shield-build]](#)  
+![Dependencies][shield-dependencies]](#)  
 ![MyGet tenant](https://img.shields.io/dotnet.myget/dotnet-coreclr/v/Microsoft.DotNet.CoreCLR.svg)
 
 Introduction
@@ -21,7 +21,7 @@ Trolley Controller requires the following software:
 [Visual Studio 2017 version 15.7 or later with the ASP.NET and webdevelopment workload](https://www.visualstudio.com/downloads/)   
 OR  
 [Visual Studio Code](https://code.visualstudio.com/download)  
-[C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms* vscode.csharp)  
+[C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)  
 
 You can install the .NET Core by copying and pasting the following command into your Package Manager Console.
 It is easiest to use when intalled with npm.
