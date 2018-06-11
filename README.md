@@ -99,7 +99,7 @@ method of type IEnuberable<int>created via HTTPGet for the trolley retrieving th
 method of type IEnuberable<RoutePoint> via HTTPGet for the trolley returning the properly evaluated quiries for context
 
 
-**Mutator Method:**
+**Mutator Method:**   
 **Post([FromBody]TrolleyLogin value)**   
 of type IActionResult created via HTTPGet takes in parameter of class type TrolleyLogin called value and sends values accordingly:   
 Initally checks for login error    
