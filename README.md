@@ -19,7 +19,7 @@ Trolley Controller requires the following software:
 * [linq](https://www.npmjs.com/package/linq)
 
 * [Visual Studio 2017 version 15.7 or later with the ASP.NET and webdevelopment workload](https://www.visualstudio.com/downloads/)  
-or  
+OR  
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms* vscode.csharp)
 
@@ -59,44 +59,48 @@ Setup
 By default the Controller uses namespace SSTrolley.Controllers.
 
 The controller uses the IDisposable objects:
-* the namespace System, specifically System.Threading.Tasks to simplify the work of writing concurrent and asynchronus code and the System.Collections.Generic namespace with interfaces and classes which allows users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
-* the namespace Microsoft.AspNetCore.Http to encapsulate all HTTP-specific information about the HTTP request.
-* the namespace Microsoft.AspNetCore.Mvc, with the Model-View-Controller the architectural pattern separates the application into three main groups of components: Models, Views, and Controllers. 
-* Additionally, it accesses the database Data with the namespace SSTrolley.Data encompassing DbInitializer and TrolleyProcessing and the model Models in the namespace SSTrolley.Models encompassing PassengerPoint, RouteBinding, RoutePoint, Trolley, TrolleyContext, TrolleyLogin and TrolleyPoint.
+the namespace System, specifically System.Threading.Tasks to simplify the work of writing concurrent and asynchronus code 
+
+the System.Collections.Generic namespace with interfaces and classes which allows users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
+
+the namespace Microsoft.AspNetCore.Http to encapsulate all HTTP-specific information about the HTTP request.
+
+the namespace Microsoft.AspNetCore.Mvc, with the Model-View-Controller the architectural pattern separates the application into three main groups of components: Models, Views, and Controllers. 
+
+Additionally, it accesses the database Data with the namespace SSTrolley.Data encompassing DbInitializer and TrolleyProcessing and the model Models in the namespace SSTrolley.Models encompassing PassengerPoint, RouteBinding, RoutePoint, Trolley, TrolleyContext, TrolleyLogin and TrolleyPoint.
 
 Methods and Examples
 -------------------
-### Overview:
 The controller uses the .NET Framework namespaces to organize its many classes, controlling the scope. 
 The C# application begins with a section of using directives
 * For example the component PassengerPoint.cs is defined in the namespace SSTrolley.Models as a model
 
 In the class TrolleyController...
 
-### Constructor:
-### TrolleyController(TrolleyContext context)
+**Constructor:**
+TrolleyController(TrolleyContext context)
 * Member Declaration:Initalize the DbContext for the TrolleyController from the SSTrolley Model for the Controller for the method 
 this is used to qualify the TrolleyController class member context that represents its data and behavior
 
-### Accessor Methods:  
-### GetIds()  
+Accessor Methods:  
+GetIds()  
 method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys
 
-### GetTrolley(int id)  
+GetTrolley(int id)  
 method of type IActionResult created via HTTPGet that is an abstract class that tries to represent the Trolleys Id's  in JSON format if possible  
 
-### GetALL()  
+GetALL()  
 method of type IEnumberable<Trolley>created via HTTPGet that returns the field for the DbSet of Trolleys with the updated Ids
 
-### GetStops(int id) 
+GetStops(int id) 
 method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys
 
-### GetStopsFull(int id)  
+GetStopsFull(int id)  
 method of type IEnuberable<RoutePoint> via HTTPGet for the trolley returning the properly evaluated quiries for context
 
 
-### Mutator Method:
-### Post([FromBody]TrolleyLogin value) 
+**Mutator Method:**
+Post([FromBody]TrolleyLogin value) 
 of type IActionResult created via HTTPGet takes in parameter of class type TrolleyLogin called value and sends values accordingly:
 Initally checks for login error   
 The DbContextTransaction named transaction is to be disposed once it has been committed or rolled back by applying the using(…) {…} syntax which will automatically call Dispose() when the using block completes.  
