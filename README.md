@@ -79,7 +79,7 @@ In the class TrolleyController...
 
 **Constructor:**
 **TrolleyController(TrolleyContext context)**
-* Member Declaration:Initalize the DbContext for the TrolleyController from the SSTrolley Model for the Controller for the method 
+Member Declaration: Initalize the DbContext for the TrolleyController from the SSTrolley Model for the Controller for the method 
 this is used to qualify the TrolleyController class member context that represents its data and behavior
 
 **Accessor Methods:**  
