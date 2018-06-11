@@ -14,7 +14,7 @@ Donated by [Hatch](https://www.hatch.com/)
  Requirements
 -------------
 Trolley Controller requires the following software:
--[npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm)
 * [.NET Core SDK 2.1 or later](https://www.microsoft.com/net/download/all)
 * [linq](https://www.npmjs.com/package/linq)
 
