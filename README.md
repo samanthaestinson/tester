@@ -1,14 +1,14 @@
 SSTrolley
 ==========
-[![Build status][shield-build]](#)
-[![Dependencies][shield-dependencies]](#)
+[![Build status][shield-build]](#)  
+[![Dependencies][shield-dependencies]](#)  
 ![MyGet tenant](https://img.shields.io/dotnet.myget/dotnet-coreclr/v/Microsoft.DotNet.CoreCLR.svg)
 
 Introduction
 ------------
 This web Application is to identify GPS location and other real time details of the Saugeen Shores Trolley service.
-This is the Trolley Controller that deals with Trolley Model.
-Developed using C# and Language Integrated Query (LINQ) to use the same basic query expression patterns to query and transform data in SQL databases, ADO .NET Datasets, XML documents and streams, and .NET collections.
+This is the Trolley Controller that deals with Trolley Model.  
+Developed using C# and Language Integrated Query (LINQ) to use the same basic query expression patterns to query and transform data in SQL databases, ADO .NET Datasets, XML documents and streams, and .NET collections.  
 Donated by [Hatch](https://www.hatch.com/)
 
  Requirements
@@ -18,8 +18,8 @@ Trolley Controller requires the following software:
 * [.NET Core SDK 2.1 or later](https://www.microsoft.com/net/download/all)
 * [linq](https://www.npmjs.com/package/linq)
 
-* [Visual Studio 2017 version 15.7 or later with the ASP.NET and webdevelopment workload](https://www.visualstudio.com/downloads/)
-or 
+* [Visual Studio 2017 version 15.7 or later with the ASP.NET and webdevelopment workload](https://www.visualstudio.com/downloads/)  
+or  
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [C# for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms* vscode.csharp)
 
@@ -48,7 +48,7 @@ Add TrolleyController section to package.json
 +]
 ```
 
-The path option:
+The path option:  
 For an open source library, specify compiled sources, which will be published to npm (usually the same value as the main field in the package.json);
 
 Create the controller in the Controllers folder where the TrolleyController forces all actions to return JSON-formatted responses and it uses {controller=api}/{action=trolley} as the common route prefix on the controller
@@ -66,36 +66,40 @@ The controller uses the IDisposable objects:
 
 Methods and Examples
 -------------------
-###Overview:
+### Overview:
 The controller uses the .NET Framework namespaces to organize its many classes, controlling the scope. 
 The C# application begins with a section of using directives
 * For example the component PassengerPoint.cs is defined in the namespace SSTrolley.Models as a model
 
 In the class TrolleyController...
 
-###Constructor:
-###TrolleyController(TrolleyContext context)
+### Constructor:
+### TrolleyController(TrolleyContext context)
 * Member Declaration:Initalize the DbContext for the TrolleyController from the SSTrolley Model for the Controller for the method 
 this is used to qualify the TrolleyController class member context that represents its data and behavior
 
-###Accessor Methods:
-###GetIds() 
+### Accessor Methods:  
+### GetIds()  
 method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys
-###GetTrolley(int id)
-method of type IActionResult created via HTTPGet that is an abstract class that tries to represent the Trolleys Id's  in JSON format if possible
-###GetALL()
+
+### GetTrolley(int id)  
+method of type IActionResult created via HTTPGet that is an abstract class that tries to represent the Trolleys Id's  in JSON format if possible  
+
+### GetALL()  
 method of type IEnumberable<Trolley>created via HTTPGet that returns the field for the DbSet of Trolleys with the updated Ids
-###GetStops(int id)
+
+### GetStops(int id) 
 method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys
-###GetStopsFull(int id)
+
+### GetStopsFull(int id)  
 method of type IEnuberable<RoutePoint> via HTTPGet for the trolley returning the properly evaluated quiries for context
 
 
-###Mutator Method:
-###Post([FromBody]TrolleyLogin value) 
+### Mutator Method:
+### Post([FromBody]TrolleyLogin value) 
 of type IActionResult created via HTTPGet takes in parameter of class type TrolleyLogin called value and sends values accordingly:
-Initally checks for login error
-The DbContextTransaction named transaction is to be disposed once it has been committed or rolled back by applying the using(…) {…} syntax which will automatically call Dispose() when the using block completes.
+Initally checks for login error   
+The DbContextTransaction named transaction is to be disposed once it has been committed or rolled back by applying the using(…) {…} syntax which will automatically call Dispose() when the using block completes.  
 * Variable Declaration:Create the local variable trolley of Trolley Models
 * Variable Minipulation:
 	Inital try statement to match trolley id with the value sent, if invalid throw exception for the error that erases all data modifications made from the start of the transaction or to a savepoint, freeing up resources held by transaction
