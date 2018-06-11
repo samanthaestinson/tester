@@ -100,9 +100,9 @@ method of type IEnuberable<RoutePoint> via HTTPGet for the trolley returning the
 
 
 **Mutator Method:**
-**Post([FromBody]TrolleyLogin value)** 
-of type IActionResult created via HTTPGet takes in parameter of class type TrolleyLogin called value and sends values accordingly:
-Initally checks for login error   
+**Post([FromBody]TrolleyLogin value)**   
+of type IActionResult created via HTTPGet takes in parameter of class type TrolleyLogin called value and sends values accordingly:   
+Initally checks for login error    
 The DbContextTransaction named transaction is to be disposed once it has been committed or rolled back by applying the using(…) {…} syntax which will automatically call Dispose() when the using block completes.  
 
 Variable Declaration:Create the local variable trolley of Trolley Models
