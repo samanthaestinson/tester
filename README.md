@@ -105,18 +105,24 @@ of type IActionResult created via HTTPGet takes in parameter of class type Troll
 Initally checks for login error    
 The DbContextTransaction named transaction is to be disposed once it has been committed or rolled back by applying the using(…) {…} syntax which will automatically call Dispose() when the using block completes.   
 
-Variable Declaration:Create the local variable trolley of Trolley Models   
-Variable Minipulation:Inital try statement to match trolley id with the value sent, if invalid throw exception for the error that erases all data modifications made from the start of the transaction or to a savepoint, freeing up resources held by transaction   
+Variable Declaration:  
+Create the local variable trolley of Trolley Models   
+Variable Minipulation:  
+Inital try statement to match trolley id with the value sent, if invalid throw exception for the error that erases all data modifications made from the start of the transaction or to a savepoint, freeing up resources held by transaction   
 If condition to analyze trolley login authentication credentials returning StatusCode(403) if insufficient   
 Initalize and define property for Trolley variable LastLongitude that accesses GPS coordinates of trolley and define property Lastlatitude;   
 If else statement to convert longitude and latitude values due to hardware limitations that provide zoomed out values   
 Initalize and define property as TotalDistance that accesses the Data TrolleyProcessing and calculates the distance inbetween the points with the haversine formula which determines the great-circle distance between two points on a sphere given their longitudes and latitudes   
 
-Object Declaration:Create point of TrolleyPoint Models as an object with the default constructor for the default values  
-Object Minipulation: In the DbSet add the point to context, Try statement to call SaveChanges Method() for the feild TrolleyContext, if error during execution call status500InternalServerError
+Object Declaration:   
+Create point of TrolleyPoint Models as an object with the default constructor for the default values  
+Object Minipulation:  
+In the DbSet add the point to context, Try statement to call SaveChanges Method() for the feild TrolleyContext, if error during execution call status500InternalServerError
 
-Object Declaration:In the parameter TrolleyLogin value is called, property Passengers is defined  
-Object Minipulation: If condition to set Passengers if not null
+Object Declaration:   
+In the parameter TrolleyLogin value is called, property Passengers is defined  
+Object Minipulation:  
+If condition to set Passengers if not null
 	
 Try statement again to call SaveChanges Method() for the feild TrolleyContext, if error during execution discard all changes made to database and return error status500InternalServerError  
 To finish the Post Method return Ok() to create an OkResult (200 OK).
