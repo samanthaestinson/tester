@@ -58,7 +58,7 @@ Setup
 -----
 By default the Controller uses namespace SSTrolley.Controllers.
 
-The controller uses the IDisposable objects:
+The controller uses the IDisposable objects:  
 -the namespace System, specifically System.Threading.Tasks to simplify the work of writing concurrent and asynchronus code and the System.Collections.Generic namespace with interfaces and classes which allows users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
 -the namespace Microsoft.AspNetCore.Http to encapsulate all HTTP-specific information about the HTTP request.
 -the namespace Microsoft.AspNetCore.Mvc, with the Model-View-Controller the architectural pattern separates the application into three main groups of components: Models, Views, and Controllers. 
@@ -66,29 +66,29 @@ The controller uses the IDisposable objects:
 
 Methods and Examples
 -------------------
-###Overview:
-The controller uses the .NET Framework namespaces to organize its many classes, controlling the scope. 
-The C# application begins with a section of using directives
--For example the component PassengerPoint.cs is defined in the namespace SSTrolley.Models as a model
+###Overview:  
+The controller uses the .NET Framework namespaces to organize its many classes, controlling the scope.   
+The C# application begins with a section of using directives  
+-For example the component PassengerPoint.cs is defined in the namespace SSTrolley.Models as a model  
 
-In the class TrolleyController...
+In the class TrolleyController...  
 
-###Constructor:
-###TrolleyController(TrolleyContext context)
--Member Declaration:Initalize the DbContext for the TrolleyController from the SSTrolley Model for the Controller for the method 
-this is used to qualify the TrolleyController class member context that represents its data and behavior
+###Constructor:  
+###TrolleyController(TrolleyContext context)  
+-Member Declaration:Initalize the DbContext for the TrolleyController from the SSTrolley Model for the Controller for the method   
+this is used to qualify the TrolleyController class member context that represents its data and behavior  
 
-###Accessor Methods:
-###GetIds() 
-method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys
-###GetTrolley(int id)
-method of type IActionResult created via HTTPGet that is an abstract class that tries to represent the Trolleys Id's  in JSON format if possible
-###GetALL()
-method of type IEnumberable<Trolley>created via HTTPGet that returns the field for the DbSet of Trolleys with the updated Ids
-###GetStops(int id)
-method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys
-###GetStopsFull(int id)
-method of type IEnuberable<RoutePoint> via HTTPGet for the trolley returning the properly evaluated quiries for context
+###Accessor Methods:  
+###GetIds()   
+method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys  
+###GetTrolley(int id)  
+method of type IActionResult created via HTTPGet that is an abstract class that tries to represent the Trolleys Id's  in JSON format if possible  
+###GetALL()  
+method of type IEnumberable<Trolley>created via HTTPGet that returns the field for the DbSet of Trolleys with the updated Ids  
+###GetStops(int id)  
+method of type IEnuberable<int>created via HTTPGet for the trolley retrieving the entity of Id's for the Trolleys  
+###GetStopsFull(int id)  
+method of type IEnuberable<RoutePoint> via HTTPGet for the trolley returning the properly evaluated quiries for context  
 
 
 ###Mutator Method:
